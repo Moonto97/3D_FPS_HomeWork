@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 461534344666276524}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -124,6 +124,7 @@ GameObject:
   - component: {fileID: 4572917743862397806}
   - component: {fileID: 6554187537435419877}
   - component: {fileID: 8258023306463347397}
+  - component: {fileID: 4268725205387507206}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -230,6 +231,7 @@ MonoBehaviour:
   SprintStaminaCost: 20
   Gravity: 9.81
   JumpForce: 15
+  JumpCount: 0
 --- !u!143 &4572917743862397806
 CharacterController:
   m_ObjectHideFlags: 0
@@ -271,6 +273,9 @@ MonoBehaviour:
   RegenRate: 15
   RegenDelay: 1
   RecoveryThreshold: 0.3
+  _currentStamina: 0
+  _regenTimer: 0
+  _isExhausted: 0
 --- !u!114 &8258023306463347397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,3 +289,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 100
+  _currentHealth: 0
+--- !u!114 &4268725205387507206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3567768709743095145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e74457acae86942b336343178ac6c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThrowForce: 20
+  UpwardForce: 3
+  MaxBombs: 5
+  RechargeTime: 3
+  _currentBombs: 0
+  ThrowPoint: {fileID: 0}
+  SpawnDistance: 1.5
+  Cooldown: 0.5
