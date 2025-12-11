@@ -25,4 +25,14 @@ public class CameraRotate : MonoBehaviour
         // 4. 누적한 회전 방향으로 카메라 회전하기
         transform.eulerAngles = new Vector3(_accumulationY, _accumulationX, 0);
     }
+
+    /// <summary>
+    /// 총기 반동을 적용합니다 (PlayerFire에서 호출)
+    /// </summary>
+    public void AddRecoil(float recoilX, float recoilY)
+    {
+        _accumulationX += recoilX;
+        _accumulationY -= recoilY;  // 위로 반동 (Y는 반대 방향)
+        _accumulationY = Mathf.Clamp(_accumulationY, -90, 90);
+    }
 }
